@@ -8,34 +8,34 @@ const FeaturedServices = () => {
   const services = [
   {
     id: 1,
-    title: "Wedding Celebrations",
-    description: "Create your dream wedding in our enchanting natural setting with personalized service and attention to every detail.",
+    title: "Casamientos",
+    description: "Crea la boda de tus sueños en nuestro encantador entorno natural de Monte Verde, con un servicio personalizado y atención a cada detalle.",
     image: "https://images.unsplash.com/photo-1707193393033-91ba0d862a2d",
     imageAlt: "Elegant outdoor wedding ceremony with bride and groom exchanging vows under a floral arch surrounded by seated guests in white chairs on manicured lawn",
     icon: "Heart",
-    features: ["Ceremony & Reception", "Bridal Suite", "Photography Locations", "Catering Services"],
+    features: ["Ceremonia y Recepción", "Suite Nupcial", "Lugares para Fotografía", "Servicios de Catering"],
     link: "/packages-pricing",
     color: "bg-rose-50 text-rose-600"
   },
   {
     id: 2,
-    title: "Corporate Events",
-    description: "Inspire your team and impress clients with sophisticated corporate gatherings in our professional yet natural environment.",
+    title: "Eventos Corporativos",
+    description: "Impresiona a tus colegas y clientes con un evento corporativo en Monte Verde, donde la profesionalidad se encuentra con la belleza natural.",
     image: "https://img.rocket.new/generatedImages/rocket_gen_img_1547e09c0-1764666161759.png",
     imageAlt: "Professional corporate event setup with business people networking around elegant cocktail tables in modern outdoor pavilion with natural lighting",
     icon: "Briefcase",
-    features: ["Team Building", "Client Entertainment", "Product Launches", "Executive Retreats"],
+    features: ["Conferencias y Talleres", "Entretenimiento para Clientes", "Catering Personalizado", "Tecnología AudioVisual"],
     link: "/packages-pricing",
     color: "bg-blue-50 text-blue-600"
   },
   {
     id: 3,
-    title: "Special Celebrations",
-    description: "From quinceañeras to anniversaries, celebrate life's precious moments in a setting as unique as your story.",
+    title: "Celebraciones Especiales",
+    description: "Celebra tus momentos más importantes en Monte Verde, donde cada evento se convierte en una experiencia inolvidable rodeada de naturaleza y elegancia.",
     image: "https://images.unsplash.com/photo-1668316429559-07866f73e0b0",
     imageAlt: "Festive celebration with guests dancing and celebrating under warm string lights in outdoor venue with decorated tables and colorful party atmosphere",
     icon: "PartyPopper",
-    features: ["Quinceañeras", "Anniversaries", "Birthday Parties", "Family Reunions"],
+    features: ["Fiestas de Cumpleaños", "Aniversarios", "Reuniones Familiares", "Eventos Temáticos"],
     link: "/packages-pricing",
     color: "bg-purple-50 text-purple-600"
   }];
@@ -46,11 +46,10 @@ const FeaturedServices = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
-            Your Vision, Our Canvas
+            Tu visión, nuestro lienzo
           </h2>
           <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            From intimate gatherings to grand celebrations, Monte Verde transforms every event into an unforgettable experience rooted in natural beauty.
-          </p>
+            Desde reuniones íntimas hasta grandes celebraciones, Monte Verde transforma cada evento en una experiencia inolvidable enraizada en la belleza natural.          </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
@@ -98,7 +97,7 @@ const FeaturedServices = () => {
                   iconPosition="right"
                   className="group-hover:bg-primary group-hover:text-primary-foreground group-hover:border-primary">
 
-                    Explore Packages
+                    Explorar paquetes
                   </Button>
                 </Link>
               </div>
@@ -114,7 +113,7 @@ const FeaturedServices = () => {
               iconName="Sparkles"
               iconPosition="left">
 
-              Discover All Amenities
+              Desubrir todos los servicios
             </Button>
           </Link>
         </div>

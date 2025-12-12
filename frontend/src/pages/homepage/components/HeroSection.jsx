@@ -11,26 +11,26 @@ const HeroSection = ({ onBookingClick }) => {
   {
     src: "https://images.unsplash.com/photo-1566231900271-8b6bcb8baea8",
     alt: "Elegant outdoor wedding ceremony setup with white chairs arranged in rows facing a natural arch decorated with white flowers and greenery in a lush garden setting",
-    season: "Spring",
-    title: "Spring Celebrations"
+    season: "Primavera",
+    title: "Celebraciones de Primavera"
   },
   {
     src: "https://images.unsplash.com/photo-1657556677440-2e6732b5c351",
     alt: "Summer evening outdoor reception with string lights illuminating dining tables set with white linens under mature trees in golden hour lighting",
-    season: "Summer",
-    title: "Summer Gatherings"
+    season: "Verano",
+    title: "Reuniones de Verano"
   },
   {
     src: "https://img.rocket.new/generatedImages/rocket_gen_img_16bff4ff3-1765182096691.png",
     alt: "Autumn wedding reception featuring warm amber lighting with rustic wooden tables decorated with orange and gold seasonal flowers surrounded by fall foliage",
-    season: "Autumn",
-    title: "Autumn Romance"
+    season: "Otoño",
+    title: "Romance de Otoño"
   },
   {
     src: "https://images.unsplash.com/photo-1447761589998-e59abcc631b9",
     alt: "Winter celebration in elegant indoor venue with crystal chandeliers, white draped tables, and large windows showing snow-covered landscape outside",
-    season: "Winter",
-    title: "Winter Elegance"
+    season: "Invierno",
+    title: "Elegancia Invernal"
   }];
 
 
@@ -69,10 +69,10 @@ const HeroSection = ({ onBookingClick }) => {
 
         <div className="space-y-4 mb-8">
           <p className="text-xl md:text-2xl text-white/90 font-light">
-            Where nature meets celebration
+            Donde los sueños florecen en armonía con la naturaleza
           </p>
           <p className="text-lg md:text-xl text-white/80 max-w-3xl mx-auto leading-relaxed">
-            Your vision, our canvas. Rooted in beauty, growing memories in harmony with nature's elegance.
+            Tu visión, nuestro lienzo. Arraigados en la belleza, cultivando recuerdos en armonía con la elegancia de la naturaleza.
           </p>
         </div>
 
@@ -85,17 +85,21 @@ const HeroSection = ({ onBookingClick }) => {
             iconPosition="left"
             className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-4">
 
-            Book Consultation
+            Reservar Consulta
           </Button>
-          <Button
+
+          {/* Video de la chacra para un futuro */}
+
+          {/* <Button
             variant="outline"
             size="lg"
             iconName="Play"
             iconPosition="left"
             className="border-white text-white hover:bg-white hover:text-foreground px-8 py-4">
 
-            Virtual Tour
-          </Button>
+            Ver Video Tour
+          </Button> */}
+          
         </div>
 
         <div className="flex justify-center space-x-2">

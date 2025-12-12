@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import Icon from '../AppIcon';
+import Img from '../AppImage';
 import Button from './Button';
 
 const Header = () => {
@@ -22,11 +23,11 @@ const Header = () => {
   }, [location]);
 
   const navigationItems = [
-    { path: '/homepage', label: 'Home', icon: 'Home' },
-    { path: '/event-gallery', label: 'Gallery', icon: 'Image' },
-    { path: '/packages-pricing', label: 'Packages', icon: 'Package' },
-    { path: '/amenities-activities', label: 'Amenities', icon: 'Sparkles' },
-    { path: '/booking-consultation', label: 'Book Now', icon: 'Calendar', highlight: true }
+    { path: '/homepage', label: 'Inicio', icon: 'Home' },
+    { path: '/event-gallery', label: 'Galería', icon: 'Image' },
+    { path: '/packages-pricing', label: 'Paquetes', icon: 'Package' },
+    { path: '/amenities-activities', label: 'Servicios', icon: 'Sparkles' },
+    { path: '/booking-consultation', label: 'Reservar', icon: 'Calendar', highlight: true }
   ];
 
   const isActivePath = (path) => location?.pathname === path;
@@ -34,11 +35,7 @@ const Header = () => {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-organic ${
-          isScrolled
-            ? 'bg-card/95 backdrop-blur-md shadow-organic-sm'
-            : 'bg-transparent'
-        }`}
+        className="fixed top-0 left-0 right-0 z-50 bg-card"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-20">
@@ -47,11 +44,10 @@ const Header = () => {
               className="flex items-center space-x-3 group"
             >
               <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center transition-organic group-hover:bg-primary/20">
-                <Icon
-                  name="TreePine"
-                  size={28}
-                  color="var(--color-primary)"
-                  className="transition-organic group-hover:scale-110"
+                <Img 
+                  src="/assets/images/logomonteverde.jpg" 
+                  alt="Logo" 
+                  className='w-10 h-10 rounded-full object-cover'
                 />
               </div>
               <div className="flex flex-col">
@@ -59,7 +55,7 @@ const Header = () => {
                   Chacra Monte Verde
                 </span>
                 <span className="text-xs text-muted-foreground font-accent">
-                  Natural Luxury Events
+                  Eventos y Estadías Naturales
                 </span>
               </div>
             </Link>
@@ -86,7 +82,7 @@ const Header = () => {
             <div className="hidden lg:flex items-center space-x-4">
               <Link to="/contact-location">
                 <Button variant="outline" iconName="Phone" iconPosition="left">
-                  Contact
+                  Contáctanos
                 </Button>
               </Link>
             </div>
@@ -135,7 +131,7 @@ const Header = () => {
                     iconName="Phone"
                     iconPosition="left"
                   >
-                    Contact Us
+                    Contáctanos
                   </Button>
                 </Link>
               </div>

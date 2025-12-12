@@ -10,39 +10,39 @@ const VenueHighlights = () => {
   const highlights = [
   {
     id: 1,
-    title: "Natural Gardens",
-    description: "Meticulously maintained gardens that bloom year-round, providing stunning backdrops for every season.",
+    title: "Jardines Exuberantes",
+    description: "Jardines meticulosamente cuidados que florecen todo el año, proporcionando fondos impresionantes para cada temporada.",
     image: "https://images.unsplash.com/photo-1655605325452-51c85c3a702f",
     imageAlt: "Lush landscaped gardens with colorful seasonal flowers, winding stone pathways, and mature trees creating natural archways in peaceful outdoor setting",
     icon: "Flower2",
-    features: ["Seasonal Blooms", "Photo Locations", "Ceremony Spaces"]
+    features: ["Flores de Temporada", "Lugares para Fotos", "Espacios para Ceremonias"]
   },
   {
     id: 2,
-    title: "Elegant Pavilions",
-    description: "Open-air pavilions that seamlessly blend indoor comfort with outdoor beauty for any weather.",
+    title: "Pabellones Elegantes",
+    description: "Pabellones al aire libre que combinan a la perfección la comodidad interior con la belleza exterior para cualquier clima.",
     image: "https://images.unsplash.com/photo-1610892575892-e53d8aae9fd2",
     imageAlt: "Elegant outdoor pavilion with white columns and draped fabric ceiling, furnished with round tables and chairs under warm string lighting",
     icon: "Building2",
-    features: ["Weather Protection", "Flexible Layouts", "Natural Lighting"]
+    features: ["Protección contra el clima", "Diseños Flexibles", "Iluminación Natural"]
   },
   {
     id: 3,
-    title: "Scenic Landscapes",
-    description: "Rolling hills and mature trees create a picturesque setting that changes beautifully with each season.",
+    title: "Paisajes Escénicos",
+    description: "Colinas onduladas y árboles maduros crean un escenario pintoresco que cambia hermosamente con cada estación.",
     image: "https://images.unsplash.com/photo-1596751900692-0712ddd9e2dc",
     imageAlt: "Panoramic view of rolling green hills with mature oak trees scattered across landscape under golden hour sky with soft natural lighting",
     icon: "Mountain",
-    features: ["Panoramic Views", "Natural Amphitheater", "Sunset Vistas"]
+    features: ["Vistas Panorámicas", "Anfiteatro Natural", "Vistas al Atardecer"]
   },
   {
     id: 4,
-    title: "Luxury Amenities",
-    description: "Premium facilities including bridal suites, catering kitchens, and professional event coordination.",
+    title: "Comodidades de Lujo",
+    description: "Instalaciones premium que incluyen suites nupciales, cocinas de catering y coordinación profesional de eventos.",
     image: "https://img.rocket.new/generatedImages/rocket_gen_img_15a69c55c-1765287133840.png",
     imageAlt: "Luxurious bridal suite interior with elegant white furniture, crystal chandelier, large mirrors, and fresh flower arrangements in sophisticated setting",
     icon: "Sparkles",
-    features: ["Bridal Suite", "Professional Kitchen", "Event Coordination"]
+    features: ["Suite Nupcial", "Cocina Profesional", "Coordinación de Eventos"]
   }];
 
 
@@ -70,10 +70,10 @@ const VenueHighlights = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
-            Rooted in Beauty, Growing Memories
+            Arraigado en la belleza, cultivando recuerdos
           </h2>
           <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Discover the unique features that make Monte Verde the perfect canvas for your celebration, where every detail is designed to create unforgettable moments.
+            Descubre las características únicas que hacen de Monte Verde el lienzo perfecto para tu celebración, donde cada detalle está diseñado para crear momentos inolvidables.
           </p>
         </div>
 
@@ -134,10 +134,10 @@ const VenueHighlights = () => {
               <Icon name="TreePine" size={32} color="var(--color-primary)" />
             </div>
             <h3 className="font-serif text-2xl md:text-3xl font-bold text-foreground mb-4">
-              Experience Monte Verde
+              Experiencia Monte Verde
             </h3>
             <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Take a virtual tour of our stunning venue and discover why Monte Verde is the perfect setting for your next celebration.
+              Realiza un recorrido virtual por nuestro impresionante lugar y descubre por qué Monte Verde es el escenario perfecto para tu próxima celebración.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link to="/event-gallery">
@@ -147,7 +147,7 @@ const VenueHighlights = () => {
                   iconName="Image"
                   iconPosition="left">
 
-                  View Gallery
+                  Ver Galería de Eventos
                 </Button>
               </Link>
               <Link to="/amenities-activities">
@@ -157,7 +157,7 @@ const VenueHighlights = () => {
                   iconName="MapPin"
                   iconPosition="left">
 
-                  Explore Amenities
+                  Explorar Servicios
                 </Button>
               </Link>
             </div>

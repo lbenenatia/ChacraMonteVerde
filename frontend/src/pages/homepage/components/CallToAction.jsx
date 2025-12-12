@@ -8,23 +8,23 @@ const CallToAction = () => {
   const contactMethods = [
   {
     icon: "Phone",
-    title: "Call Us",
-    description: "Speak with our event specialists",
-    action: "+1 (555) 123-4567",
-    href: "tel:+15551234567"
+    title: "Llámanos",
+    description: "Habla con nuestros especialistas en eventos",
+    action: "+598 92 824 644",
+    href: "tel:+59892824644"
   },
   {
     icon: "Mail",
-    title: "Email Us",
-    description: "Get detailed information",
-    action: "info@monteverde.com",
-    href: "mailto:info@monteverde.com"
+    title: "Envíanos un correo",
+    description: "Obtén información detallada",
+    action: "monteverdechacra@gmail.com",
+    href: "mailto:monteverdechacra@gmail.com"
   },
   {
     icon: "MapPin",
-    title: "Visit Us",
-    description: "Schedule a venue tour",
-    action: "Book Tour",
+    title: "Visítanos",
+    description: "Programa una visita al lugar",
+    action: "Contactar",
     href: "/contact-location"
   }];
 
@@ -42,15 +42,15 @@ const CallToAction = () => {
         <div className="text-center mb-16">
           <div className="inline-flex items-center px-4 py-2 bg-primary/10 rounded-full text-primary text-sm font-medium mb-6">
             <Icon name="TreePine" size={16} className="mr-2" />
-            Ready to Begin Your Journey?
+            ¿Listo para comenzar tu evento perfecto?
           </div>
           
           <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
-            Let's Create Something Beautiful Together
+            Creemos algo hermoso juntos
           </h2>
           
           <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed mb-8">
-            Your perfect celebration awaits at Monte Verde. From the first consultation to your special day, we're here to make your vision a reality.
+            Desde la consulta inicial hasta el día del evento, contáctanos hoy mismo y da el primer paso hacia la creación de recuerdos inolvidables en Monte Verde.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
@@ -62,7 +62,7 @@ const CallToAction = () => {
                 iconPosition="left"
                 className="px-8 py-4">
 
-                Book Free Consultation
+                Reservar Consulta
               </Button>
             </Link>
             <Link to="/packages-pricing">
@@ -73,7 +73,7 @@ const CallToAction = () => {
                 iconPosition="left"
                 className="px-8 py-4">
 
-                View Packages
+                Ver Paquetes
               </Button>
             </Link>
           </div>
@@ -141,17 +141,17 @@ const CallToAction = () => {
             </div>
             
             <h3 className="font-serif text-2xl font-bold text-foreground mb-4">
-              Join the Monte Verde Family
+              Únete a la Familia Monte Verde
             </h3>
             
             <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-              Become part of our community and receive exclusive updates, seasonal inspiration, and special offers for your upcoming celebrations.
+              Sé parte de nuestra comunidad y recibe actualizaciones exclusivas, inspiración estacional y ofertas especiales para tus próximas celebraciones.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
               <input
                 type="email"
-                placeholder="Enter your email address"
+                placeholder="Ingresa tu correo electrónico"
                 className="flex-1 px-4 py-3 bg-background border border-input rounded-lg focus:outline-none focus:ring-2 focus:ring-ring text-foreground" />
 
               <Button
@@ -160,12 +160,12 @@ const CallToAction = () => {
                 iconPosition="right"
                 className="px-6">
 
-                Subscribe
+                Suscribirse
               </Button>
             </div>
             
             <p className="text-xs text-muted-foreground mt-3">
-              We respect your privacy. Unsubscribe at any time.
+              Respetamos tu privacidad. Puedes darte de baja en cualquier momento.
             </p>
           </div>
         </div>

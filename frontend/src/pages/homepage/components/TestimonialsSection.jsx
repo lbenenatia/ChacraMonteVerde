@@ -9,10 +9,10 @@ const TestimonialsSection = () => {
   {
     id: 1,
     name: "María Elena & Carlos Rodriguez",
-    event: "Wedding Celebration",
-    date: "October 2024",
+    event: "Casamiento",
+    date: "Octubre 2024",
     rating: 5,
-    content: `Monte Verde exceeded every expectation we had for our dream wedding. The natural beauty of the venue provided the perfect backdrop for our celebration, and the staff's attention to detail was incredible. Our guests are still talking about the magical atmosphere and how seamlessly everything flowed. It truly felt like a fairy tale come to life.`,
+    content: `Nuestro casamiento en Monte Verde fue un sueño hecho realidad. Desde el momento en que visitamos el lugar, supimos que era el escenario perfecto para nuestro día especial. La combinación de la belleza natural y la elegancia del lugar creó una atmósfera mágica. El equipo de Monte Verde fue increíblemente atento y profesional, asegurándose de que cada detalle fuera perfecto. Nuestros invitados no dejaron de elogiar la ubicación y la organización del evento. Estamos eternamente agradecidos por haber elegido Monte Verde para celebrar nuestro amor.`,
     image: "https://images.unsplash.com/photo-1723052371142-6a6a424520bb",
     imageAlt: "Happy newlywed couple María Elena in elegant white wedding dress and Carlos in classic black tuxedo embracing and smiling in natural outdoor setting with soft lighting",
     eventImage: "https://images.unsplash.com/photo-1566231900271-8b6bcb8baea8",
@@ -21,10 +21,10 @@ const TestimonialsSection = () => {
   {
     id: 2,
     name: "Ana Patricia Mendoza",
-    event: "Quinceañera Celebration",
-    date: "September 2024",
+    event: "Quince",
+    date: "Setiembre 2024",
     rating: 5,
-    content: `My daughter's quinceañera at Monte Verde was absolutely perfect. The venue's natural elegance complemented our traditional celebration beautifully. The team helped us create a magical evening that honored our family traditions while providing a sophisticated setting. Every detail was handled with care and professionalism.`,
+    content: `Celebrar mis quinces en Monte Verde fue una experiencia inolvidable. Desde el primer momento, el equipo de Monte Verde hizo que me sintiera especial y cuidada. La locación es simplemente espectacular, con jardines hermosos y espacios elegantes que hicieron que mi fiesta fuera mágica. Mis amigos y familiares quedaron impresionados con la organización y la atención al detalle. Cada momento de la celebración fue perfecto, desde la ceremonia hasta la recepción. Monte Verde superó todas mis expectativas y siempre llevaré esos recuerdos en mi corazón.`,
     image: "https://img.rocket.new/generatedImages/rocket_gen_img_1beb7551b-1763293899118.png",
     imageAlt: "Elegant Hispanic woman Ana Patricia in formal evening dress with warm smile standing in beautifully decorated venue with soft ambient lighting",
     eventImage: "https://images.unsplash.com/photo-1702342457383-e0e35559d261",
@@ -33,10 +33,10 @@ const TestimonialsSection = () => {
   {
     id: 3,
     name: "Roberto Silva - Tech Solutions Inc.",
-    event: "Corporate Retreat",
-    date: "November 2024",
+    event: "Evento Corporativo",
+    date: "Noviembre 2024",
     rating: 5,
-    content: `We've hosted corporate events at many venues, but Monte Verde stands out for its unique combination of professionalism and natural tranquility. Our team retreat was incredibly productive, and the setting helped foster genuine connections among our staff. The facilities are top-notch, and the service was impeccable throughout our three-day event.`,
+    content: `Organizar nuestro evento corporativo en Monte Verde fue una decisión que resultó ser excepcional. Desde el inicio, el equipo de Monte Verde demostró un alto nivel de profesionalismo y atención al detalle. La ubicación ofrecía un ambiente perfecto para combinar trabajo y relajación, con espacios versátiles y tecnología de punta para nuestras presentaciones. Nuestros empleados quedaron encantados con las comodidades y la belleza del entorno natural. La experiencia en Monte Verde no solo fortaleció nuestro equipo, sino que también dejó una impresión duradera en todos los asistentes. Sin duda, volveremos a elegir Monte Verde para futuros eventos corporativos.`,
     image: "https://img.rocket.new/generatedImages/rocket_gen_img_1c1531fe9-1765040853978.png",
     imageAlt: "Professional businessman Roberto Silva in navy blue suit with confident smile standing in modern corporate setting with natural lighting",
     eventImage: "https://img.rocket.new/generatedImages/rocket_gen_img_1547e09c0-1764666161759.png",
@@ -59,10 +59,10 @@ const TestimonialsSection = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
-            Stories of Celebration
+            Comentarios de eventos pasados
           </h2>
           <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Hear from families who have created lasting memories at Monte Verde, where every celebration becomes a cherished story.
+            Escucha a las familias que han creado recuerdos duraderos en Monte Verde, donde cada celebración se convierte en una historia apreciada.
           </p>
         </div>
 
@@ -157,21 +157,21 @@ const TestimonialsSection = () => {
               <Icon name="Users" size={32} color="var(--color-primary)" />
             </div>
             <h3 className="font-serif text-2xl font-semibold text-foreground mb-2">500+</h3>
-            <p className="text-muted-foreground">Celebrations Hosted</p>
+            <p className="text-muted-foreground">Eventos organizados</p>
           </div>
           <div className="text-center">
             <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
               <Icon name="Star" size={32} color="var(--color-primary)" />
             </div>
             <h3 className="font-serif text-2xl font-semibold text-foreground mb-2">4.9/5</h3>
-            <p className="text-muted-foreground">Average Rating</p>
+            <p className="text-muted-foreground">Calificación Promedio</p>
           </div>
           <div className="text-center">
             <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
               <Icon name="Heart" size={32} color="var(--color-primary)" />
             </div>
             <h3 className="font-serif text-2xl font-semibold text-foreground mb-2">98%</h3>
-            <p className="text-muted-foreground">Client Satisfaction</p>
+            <p className="text-muted-foreground">Satisfacción del Cliente</p>
           </div>
         </div>
       </div>
