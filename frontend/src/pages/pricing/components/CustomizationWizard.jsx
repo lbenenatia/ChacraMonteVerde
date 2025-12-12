@@ -10,33 +10,33 @@ const CustomizationWizard = ({ basePackage, onComplete }) => {
   const [selectedExtras, setSelectedExtras] = useState([]);
 
   const services = [
-    { id: 'catering-premium', name: 'Catering Premium', price: 85000, icon: 'UtensilsCrossed', description: 'Menú gourmet de 3 pasos con opciones vegetarianas' },
-    { id: 'catering-standard', name: 'Catering Estándar', price: 55000, icon: 'Utensils', description: 'Menú completo de 2 pasos' },
-    { id: 'bar-premium', name: 'Barra Premium', price: 45000, icon: 'Wine', description: 'Bebidas premium y cócteles personalizados' },
-    { id: 'bar-standard', name: 'Barra Estándar', price: 28000, icon: 'Beer', description: 'Bebidas estándar y refrescos' }
+    { id: 'catering-premium', name: 'Catering Premium', price: 1, icon: 'UtensilsCrossed', description: 'Menú gourmet de 3 pasos con opciones vegetarianas' },
+    { id: 'catering-standard', name: 'Catering Estándar', price: 1, icon: 'Utensils', description: 'Menú completo de 2 pasos' },
+    { id: 'bar-premium', name: 'Barra Premium', price: 1, icon: 'Wine', description: 'Bebidas premium y cócteles personalizados' },
+    { id: 'bar-standard', name: 'Barra Estándar', price: 1, icon: 'Beer', description: 'Bebidas estándar y refrescos' }
   ];
 
   const amenities = [
-    { id: 'photo-pro', name: 'Fotografía Profesional', price: 120000, icon: 'Camera', description: '8 horas de cobertura completa' },
-    { id: 'video-hd', name: 'Video HD', price: 95000, icon: 'Video', description: 'Video cinematográfico editado' },
-    { id: 'dj-sound', name: 'DJ y Sonido', price: 65000, icon: 'Music', description: 'Equipo profesional y DJ experimentado' },
-    { id: 'live-music', name: 'Música en Vivo', price: 110000, icon: 'Music2', description: 'Banda o conjunto musical' },
-    { id: 'lighting', name: 'Iluminación Especial', price: 38000, icon: 'Lightbulb', description: 'Luces LED y efectos' }
+    { id: 'photo-pro', name: 'Fotografía Profesional', price: 1, icon: 'Camera', description: '8 horas de cobertura completa' },
+    { id: 'video-hd', name: 'Video HD', price: 1, icon: 'Video', description: 'Video cinematográfico editado' },
+    { id: 'dj-sound', name: 'DJ y Sonido', price: 1, icon: 'Music', description: 'Equipo profesional y DJ experimentado' },
+    { id: 'live-music', name: 'Música en Vivo', price: 1, icon: 'Music2', description: 'Banda o conjunto musical' },
+    { id: 'lighting', name: 'Iluminación Especial', price: 1, icon: 'Lightbulb', description: 'Luces LED y efectos' }
   ];
 
   const extras = [
-    { id: 'decoration-floral', name: 'Decoración Floral', price: 45000, icon: 'Flower', description: 'Arreglos naturales personalizados' },
-    { id: 'furniture-lounge', name: 'Mobiliario Lounge', price: 28000, icon: 'Armchair', description: 'Sillones y mesas de diseño' },
-    { id: 'kids-animation', name: 'Animación Infantil', price: 35000, icon: 'Baby', description: 'Recreadores y juegos' },
-    { id: 'fireworks', name: 'Fuegos Artificiales', price: 55000, icon: 'Sparkles', description: 'Show pirotécnico de 10 minutos' },
-    { id: 'photo-booth', name: 'Cabina de Fotos', price: 32000, icon: 'Camera', description: 'Cabina con props y impresiones' },
-    { id: 'valet-parking', name: 'Valet Parking', price: 25000, icon: 'Car', description: 'Servicio de estacionamiento' }
+    { id: 'decoration-floral', name: 'Decoración Floral', price: 1, icon: 'Flower', description: 'Arreglos naturales personalizados' },
+    { id: 'furniture-lounge', name: 'Mobiliario Lounge', price: 1, icon: 'Armchair', description: 'Sillones y mesas de diseño' },
+    { id: 'kids-animation', name: 'Animación Infantil', price: 1, icon: 'Baby', description: 'Recreadores y juegos' },
+    { id: 'fireworks', name: 'Fuegos Artificiales', price: 1, icon: 'Sparkles', description: 'Show pirotécnico de 10 minutos' },
+    { id: 'photo-booth', name: 'Cabina de Fotos', price: 1, icon: 'Camera', description: 'Cabina con props y impresiones' },
+    { id: 'valet-parking', name: 'Valet Parking', price: 1, icon: 'Car', description: 'Servicio de estacionamiento' }
   ];
 
   const formatPrice = (price) => {
-    return new Intl.NumberFormat('es-AR', {
+    return new Intl.NumberFormat('es-UY', {
       style: 'currency',
-      currency: 'ARS',
+      currency: 'UYU',
       minimumFractionDigits: 0
     })?.format(price);
   };

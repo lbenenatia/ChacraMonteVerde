@@ -13,12 +13,12 @@ const PricingCalculator = ({ packages, onCalculate }) => {
   const [totalPrice, setTotalPrice] = useState(0);
 
   const addons = [
-    { id: 'catering', name: 'Catering Premium', price: 85000, description: 'Menú gourmet de 3 pasos' },
-    { id: 'decoration', name: 'Decoración Floral', price: 45000, description: 'Arreglos naturales personalizados' },
-    { id: 'photography', name: 'Fotografía Profesional', price: 120000, description: '8 horas de cobertura completa' },
-    { id: 'music', name: 'DJ y Sonido', price: 65000, description: 'Equipo profesional y DJ experimentado' },
-    { id: 'lighting', name: 'Iluminación Ambiental', price: 38000, description: 'Luces LED y efectos especiales' },
-    { id: 'furniture', name: 'Mobiliario Extra', price: 28000, description: 'Sillas, mesas y lounge adicional' }
+    { id: 'catering', name: 'Catering Premium', price: 1, description: 'Menú gourmet de 3 pasos' },
+    { id: 'decoration', name: 'Decoración Floral', price: 1, description: 'Arreglos naturales personalizados' },
+    { id: 'photography', name: 'Fotografía Profesional', price: 1, description: '8 horas de cobertura completa' },
+    { id: 'music', name: 'DJ y Sonido', price: 1, description: 'Equipo profesional y DJ experimentado' },
+    { id: 'lighting', name: 'Iluminación Ambiental', price: 1, description: 'Luces LED y efectos especiales' },
+    { id: 'furniture', name: 'Mobiliario Extra', price: 1, description: 'Sillas, mesas y lounge adicional' }
   ];
 
   const packageOptions = packages?.map(pkg => ({
@@ -57,9 +57,9 @@ const PricingCalculator = ({ packages, onCalculate }) => {
   };
 
   const formatPrice = (price) => {
-    return new Intl.NumberFormat('es-AR', {
+    return new Intl.NumberFormat('es-UY', {
       style: 'currency',
-      currency: 'ARS',
+      currency: 'UYU',
       minimumFractionDigits: 2
     })?.format(price);
   };

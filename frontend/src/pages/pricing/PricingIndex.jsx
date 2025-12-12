@@ -26,7 +26,7 @@ const PackagesPricing = () => {
       name: 'Esencial',
       icon: 'Leaf',
       description: 'Perfecto para celebraciones íntimas y eventos corporativos pequeños',
-      price: 450000,
+      price: 1,
       capacity: 80,
       discount: null,
       financing: { maxInstallments: 12 },
@@ -48,7 +48,7 @@ const PackagesPricing = () => {
       name: 'Premium',
       icon: 'TreePine',
       description: 'La elección más popular para bodas y eventos especiales',
-      price: 850000,
+      price: 2,
       capacity: 150,
       discount: 15,
       financing: { maxInstallments: 24 },
@@ -72,7 +72,7 @@ const PackagesPricing = () => {
       name: 'Exclusivo',
       icon: 'Crown',
       description: 'Experiencia completa de lujo para eventos inolvidables',
-      price: 1450000,
+      price: 3,
       capacity: 250,
       discount: 20,
       financing: { maxInstallments: 60 },
@@ -131,11 +131,11 @@ const PackagesPricing = () => {
       title: 'Flexibilidad Total',
       description: 'Modifica tu reserva sin cargos adicionales hasta 15 días antes'
     },
-    {
-      icon: 'Award',
-      title: 'Calidad Certificada',
-      description: 'Certificados por la Cámara Argentina de Eventos y Turismo'
-    },
+    // {
+    //   icon: 'Award',
+    //   title: 'Calidad Certificada',
+    //   description: 'Certificados por la Cámara Argentina de Eventos y Turismo'
+    // },
     {
       icon: 'Users',
       title: 'Asesoramiento Experto',
@@ -150,11 +150,11 @@ const PackagesPricing = () => {
     },
     {
       question: '¿Cómo funcionan las cuotas sin interés?',
-      answer: 'Ofrecemos hasta 12 cuotas sin interés con todas las tarjetas de crédito. Para plazos mayores, aplicamos tasas preferenciales que puedes simular en nuestra calculadora de financiación.'
+      answer: 'Ofrecemos hasta 60 cuotas sin interés con todas las tarjetas de crédito. Para los plazos mayores, aplicamos tasas preferenciales que puedes simular en nuestra calculadora de financiación.'
     },
     {
       question: '¿Puedo visitar el lugar antes de reservar?',
-      answer: 'Por supuesto. Ofrecemos visitas guiadas de lunes a sábados con cita previa. Durante la visita, nuestro coordinador te mostrará todos los espacios y responderá tus consultas.'
+      answer: 'Por supuesto. Ofrecemos visitas guiadas de lunes a viernes con cita previa. Durante la visita, nuestro coordinador te mostrará todos los espacios y responderá tus consultas.'
     },
     {
       question: '¿Qué pasa si necesito cancelar?',
@@ -197,7 +197,7 @@ const PackagesPricing = () => {
                 </Link>
                 <Link to="/contact-location">
                   <Button variant="outline" size="lg" iconName="Phone" iconPosition="left">
-                    Contactar Asesor
+                    Contactar
                   </Button>
                 </Link>
               </div>
@@ -299,7 +299,7 @@ const PackagesPricing = () => {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {benefits?.map((benefit, index) => (
                 <div
                   key={index}
@@ -385,7 +385,7 @@ const PackagesPricing = () => {
             </div>
 
             <p className="text-sm text-white/70 mt-6">
-              Horario de atención: Lunes a Sábado, 9:00 - 20:00 hs
+              Horario de atención: Lunes a Viernes, 9:00 - 20:00 hs
             </p>
           </div>
         </section>

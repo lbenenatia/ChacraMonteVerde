@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { Helmet } from 'react-helmet';
 import Header from '../../components/ui/Header';
 import Footer from '../../components/ui/Footer';
 import HeroSection from './components/HeroSection';
@@ -17,6 +17,13 @@ const Homepage = () => {
   };
 
   return (
+    <>
+    <Helmet>
+      <title>Chacra Monte Verde</title>
+      <meta
+        name="description"
+        content="Encuentra toda la información sobre Chacra Monte Verde, un lugar único para eventos y estadías naturales en Maldonado, Uruguay." />
+    </Helmet>
     <div className="min-h-screen bg-background">
       <Header />
       
@@ -31,6 +38,7 @@ const Homepage = () => {
       
       <Footer />
     </div>
+    </>
   );
 };
 
