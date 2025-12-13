@@ -190,12 +190,12 @@ const PackagesPricing = () => {
               </p>
 
               <div className="flex flex-wrap items-center justify-center gap-4">
-                <Link to="/booking-consultation">
+                <Link to="/booking">
                   <Button variant="default" size="lg" iconName="Calendar" iconPosition="right">
                     Reservar Consulta
                   </Button>
                 </Link>
-                <Link to="/contact-location">
+                <Link to="/contact">
                   <Button variant="outline" size="lg" iconName="Phone" iconPosition="left">
                     Contactar
                   </Button>
@@ -372,7 +372,7 @@ const PackagesPricing = () => {
             </p>
 
             <div className="flex flex-wrap items-center justify-center gap-4">
-              <Link to="/booking-consultation">
+              <Link to="/booking">
                 <Button variant="secondary" size="lg" iconName="Calendar" iconPosition="right">
                   Agendar Consulta Gratuita
                 </Button>

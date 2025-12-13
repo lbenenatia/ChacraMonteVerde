@@ -73,10 +73,10 @@ const ContactLocation = () => {
         document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' });
         break;
       case 'call':
-        window.location.href = 'tel:+541145678900';
+        window.location.href = 'tel:+59892824644';
         break;
       case 'chat':
-        window.open('https://wa.me/5491123456789', '_blank');
+        window.open('https://wa.me/59892824644', '_blank');
         break;
       case 'download':
         alert('Descargando brochure...');
@@ -156,7 +156,7 @@ const ContactLocation = () => {
           </div>
         </section>
 
-        <section className="py-16 lg:py-24 bg-gradient-to-br from-primary/5 to-accent/5">
+        {/* <section className="py-16 lg:py-24 bg-gradient-to-br from-primary/5 to-accent/5">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
               <h2 className="font-serif text-3xl font-bold text-foreground mb-4">
@@ -179,7 +179,7 @@ const ContactLocation = () => {
               ))}
             </div>
           </div>
-        </section>
+        </section> */}
 
         <section className="py-16 lg:py-24">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -189,7 +189,7 @@ const ContactLocation = () => {
                 ¿Listo para Comenzar tu Celebración?
               </h2>
               <p className="text-white/90 text-lg mb-8 max-w-2xl mx-auto">
-                Nuestro equipo está esperando para ayudarte a crear el evento de tus sueños en el entorno natural más hermoso de Buenos Aires.
+                Nuestro equipo está esperando para ayudarte a crear el evento de tus sueños en el entorno natural más hermoso de Maldonado.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button
@@ -206,7 +206,7 @@ const ContactLocation = () => {
                   size="lg"
                   iconName="Phone"
                   iconPosition="left"
-                  onClick={() => window.location.href = 'tel:+541145678900'}
+                  onClick={() => window.location.href = 'tel:+59892824644'}
                   className="bg-white/10 text-white border-white/30 hover:bg-white/20"
                 >
                   Llamar Ahora

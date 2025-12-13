@@ -6,47 +6,44 @@ const LocationMap = () => {
   const [activeTab, setActiveTab] = useState('map');
 
   const mapCoordinates = {
-    lat: -34.6037,
-    lng: -58.3816
+    lat: -34.77381733940696,
+    lng: -54.96584539933728
   };
 
   const directions = [
     {
       icon: 'Car',
-      title: 'Desde Buenos Aires',
+      title: 'Desde X',
       steps: [
-        'Tomar Autopista Panamericana (Ruta 9) dirección norte',
-        'Salir en Km 45 hacia Ruta Provincial 23',
-        'Continuar 8 km hasta Monte Verde',
-        'Girar a la derecha en el cartel de Chacra Monte Verde'
+        'Tomar...',
+        'Salir...',
+        'Continuar...',
+        'Girar en las ruedas iluminadas de Chacra Monte Verde'
       ],
-      duration: '60 minutos',
-      distance: '68 km'
+      duration: 'X minutos',
+      distance: 'X km'
     },
     {
       icon: 'Bus',
       title: 'En Transporte Público',
       steps: [
-        'Tomar tren Mitre desde Retiro hasta Tigre',
-        'Desde Tigre, tomar colectivo línea 60 hasta Monte Verde',
-        'Bajarse en parada "Ruta 23 y Acceso Monte Verde"',
-        'Caminar 500 metros o solicitar transfer gratuito'
+        'Tomar...',
+        'Desde...',
+        'Bajarse...',
+        'Caminar...'
       ],
-      duration: '90 minutos',
-      distance: 'Transfer disponible'
+      duration: 'X minutos',
+      distance: 'X km'
     }
   ];
 
   const nearbyLandmarks = [
-    { name: 'Aeropuerto Internacional Ezeiza', distance: '45 km', time: '40 min' },
-    { name: 'Aeropuerto Jorge Newbery', distance: '55 km', time: '50 min' },
-    { name: 'Centro de Buenos Aires', distance: '60 km', time: '60 min' },
-    { name: 'Tigre', distance: '15 km', time: '15 min' },
-    { name: 'Pilar', distance: '20 km', time: '20 min' }
+    { name: 'Centro de San Carlos', distance: 'X km', time: 'X min' },
+    { name: 'Centro de Maldonado', distance: 'X km', time: 'X min' }
   ];
 
   const parkingInfo = [
-    { icon: 'Car', text: 'Estacionamiento gratuito para 150 vehículos' },
+    { icon: 'Car', text: 'Estacionamiento gratuito para X vehículos' },
     { icon: 'Bus', text: 'Espacio para buses y vehículos grandes' },
     { icon: 'Shield', text: 'Vigilancia 24/7 durante eventos' },
     { icon: 'Accessibility', text: 'Espacios para personas con movilidad reducida' }
@@ -59,7 +56,7 @@ const LocationMap = () => {
           Ubicación y Cómo Llegar
         </h2>
         <p className="text-muted-foreground">
-          Ruta Provincial 23, Km 45 - Monte Verde, Buenos Aires
+          Camino Los Ceibos, Km 7 - Monte Verde, San Carlos.
         </p>
       </div>
       <div className="border-b border-border">
@@ -173,7 +170,7 @@ const LocationMap = () => {
               </div>
             ))}
 
-            <div className="bg-accent/10 border border-accent/20 rounded-lg p-4">
+            {/* <div className="bg-accent/10 border border-accent/20 rounded-lg p-4">
               <div className="flex items-start space-x-3">
                 <Icon name="Info" size={20} color="var(--color-accent)" className="flex-shrink-0 mt-0.5" />
                 <div>
@@ -185,7 +182,7 @@ const LocationMap = () => {
                   </p>
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
         )}
 
@@ -208,7 +205,7 @@ const LocationMap = () => {
                 <div>
                   <h4 className="text-sm font-medium text-foreground mb-2">Capacidad</h4>
                   <p className="text-sm text-muted-foreground">
-                    Nuestro amplio estacionamiento puede acomodar hasta 150 vehículos simultáneamente, con espacios adicionales para buses y vehículos de gran tamaño.
+                    Nuestro amplio estacionamiento puede acomodar hasta X vehículos simultáneamente, con espacios adicionales para buses y vehículos de gran tamaño.
                   </p>
                 </div>
                 <div>
@@ -220,13 +217,7 @@ const LocationMap = () => {
                 <div>
                   <h4 className="text-sm font-medium text-foreground mb-2">Accesibilidad</h4>
                   <p className="text-sm text-muted-foreground">
-                    Espacios designados cerca de la entrada principal para personas con movilidad reducida, con acceso pavimentado y sin barreras.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="text-sm font-medium text-foreground mb-2">Servicio de Valet</h4>
-                  <p className="text-sm text-muted-foreground">
-                    Disponible bajo solicitud para eventos especiales. Consulta con nuestro equipo al momento de la reserva.
+                    Baños y accesos adaptados para personas con movilidad reducida, asegurando comodidad para todos nuestros visitantes.
                   </p>
                 </div>
               </div>

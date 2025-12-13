@@ -6,37 +6,37 @@ const ContactInfoCard = () => {
     {
       icon: 'Phone',
       title: 'Teléfono',
-      primary: '+54 11 4567-8900',
-      secondary: '+54 11 4567-8901',
+      primary: '+598 92 824 644',
+      secondary: '+598 99 381 954',
       description: 'Lun - Vie: 9:00 - 18:00 hs',
-      action: 'tel:+541145678900',
+      action: 'tel:+59892824644',
       actionLabel: 'Llamar ahora'
     },
     {
       icon: 'Mail',
       title: 'Correo Electrónico',
-      primary: 'info@monteverde.com.ar',
-      secondary: 'eventos@monteverde.com.ar',
+      primary: 'monteverdechacra@gmail.com',
+      secondary: 'lucabenenati@outlook.com',
       description: 'Respuesta en 24 horas',
-      action: 'mailto:info@monteverde.com.ar',
+      action: 'mailto:monteverdechacra@gmail.com',
       actionLabel: 'Enviar email'
     },
     {
       icon: 'MessageCircle',
       title: 'WhatsApp',
-      primary: '+54 9 11 2345-6789',
+      primary: '+598 92 824 644',
       secondary: 'Chat disponible',
       description: 'Respuesta inmediata',
-      action: 'https://wa.me/5491123456789',
+      action: 'https://wa.me/59892824644',
       actionLabel: 'Abrir chat'
     },
     {
       icon: 'MapPin',
       title: 'Dirección',
-      primary: 'Ruta Provincial 23, Km 45',
-      secondary: 'Monte Verde, Buenos Aires',
-      description: 'A 60 km de CABA',
-      action: 'https://maps.google.com/?q=-34.6037,-58.3816',
+      primary: 'Camino Los Ceibos, Km 7',
+      secondary: 'San Carlos. Maldonado, Uruguay',
+      description: 'Chalet Monte Verde',
+      action: 'https://maps.google.com/?q=-34.77381733940696,-54.96584539933728',
       actionLabel: 'Ver en mapa'
     }
   ];

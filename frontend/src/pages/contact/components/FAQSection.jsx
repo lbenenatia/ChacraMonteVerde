@@ -131,14 +131,14 @@ const FAQSection = () => {
             </p>
             <div className="flex flex-wrap gap-3">
               <a
-                href="tel:+541145678900"
+                href="tel:+59892824644"
                 className="inline-flex items-center space-x-2 px-4 py-2 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-organic text-sm font-medium"
               >
                 <Icon name="Phone" size={16} />
                 <span>Llamar ahora</span>
               </a>
               <a
-                href="https://wa.me/5491123456789"
+                href="https://wa.me/59892824644"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center space-x-2 px-4 py-2 bg-success text-success-foreground rounded-lg hover:bg-success/90 transition-organic text-sm font-medium"

@@ -9,13 +9,6 @@ import CallToAction from './components/CallToAction';
 
 const Homepage = () => {
 
-  const handleBookingClick = () => {
-    const availabilitySection = document.getElementById('availability-checker');
-    if (availabilitySection) {
-      availabilitySection?.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
   return (
     <>
     <Helmet>
@@ -25,18 +18,18 @@ const Homepage = () => {
         content="Encuentra toda la información sobre Chacra Monte Verde, un lugar único para eventos y estadías naturales en Maldonado, Uruguay." />
     </Helmet>
     <div className="min-h-screen bg-background">
-      <Header />
-      
-      <main className="main-content">
-        <HeroSection onBookingClick={handleBookingClick} />
+    <Header />
+    
+    <main className="main-content">
+      <HeroSection />
 
-        <FeaturedServices />
-        <VenueHighlights />
-        <TestimonialsSection />
-        <CallToAction />
-      </main>
-      
-      <Footer />
+      <FeaturedServices />
+      <VenueHighlights />
+      <TestimonialsSection />
+      <CallToAction />
+    </main>
+    
+    <Footer />
     </div>
     </>
   );

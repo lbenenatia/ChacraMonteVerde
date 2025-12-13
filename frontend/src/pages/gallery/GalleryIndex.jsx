@@ -357,12 +357,12 @@ const EventGallery = () => {
                   Descubre cómo transformamos sueños en realidad. Cada imagen cuenta una historia única de celebración y alegría.
                 </p>
                 <div className="flex flex-wrap justify-center gap-4">
-                  <Link to="/booking-consultation">
+                  <Link to="/booking">
                     <Button variant="default" size="lg" iconName="Calendar" iconPosition="left">
                       Reservar Consulta
                     </Button>
                   </Link>
-                  <Link to="/packages-pricing">
+                  <Link to="/pricing">
                     <Button variant="outline" size="lg" iconName="Package" iconPosition="left">
                       Ver Paquetes
                     </Button>
@@ -475,7 +475,7 @@ const EventGallery = () => {
                     <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
                       Únete a las familias y empresas que han confiado en Chacra Monte Verde para sus celebraciones más importantes
                     </p>
-                    <Link to="/booking-consultation">
+                    <Link to="/booking">
                       <Button variant="default" size="lg" iconName="Calendar" iconPosition="left">
                         Agendar Consulta Gratuita
                       </Button>
@@ -500,17 +500,17 @@ const EventGallery = () => {
                 Nuestro equipo está listo para ayudarte a crear una experiencia inolvidable. Explora nuestros paquetes o agenda una visita al lugar.
               </p>
               <div className="flex flex-wrap justify-center gap-4">
-                <Link to="/packages-pricing">
+                <Link to="/pricing">
                   <Button variant="default" size="lg" iconName="Package" iconPosition="left">
                     Ver Paquetes y Precios
                   </Button>
                 </Link>
-                <Link to="/amenities-activities">
+                <Link to="/activities">
                   <Button variant="outline" size="lg" iconName="Sparkles" iconPosition="left">
                     Explorar Amenidades
                   </Button>
                 </Link>
-                <Link to="/contact-location">
+                <Link to="/contact">
                   <Button variant="outline" size="lg" iconName="MapPin" iconPosition="left">
                     Visitar el Lugar
                   </Button>

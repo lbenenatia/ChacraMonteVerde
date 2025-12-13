@@ -23,7 +23,7 @@ const PricingCalculator = ({ packages, onCalculate }) => {
 
   const packageOptions = packages?.map(pkg => ({
     value: pkg?.id,
-    label: `${pkg?.name} - ${new Intl.NumberFormat('es-AR', { style: 'currency', currency: 'ARS' })?.format(pkg?.price)}`,
+    label: `${pkg?.name} - ${new Intl.NumberFormat('es-UY', { style: 'currency', currency: 'UYU' })?.format(pkg?.price)}`,
     description: `Capacidad: ${pkg?.capacity} personas`
   }));
 
@@ -43,7 +43,7 @@ const PricingCalculator = ({ packages, onCalculate }) => {
     // Add extra guest cost if over capacity
     if (guestCount > pkg?.capacity) {
       const extraGuests = guestCount - pkg?.capacity;
-      total += extraGuests * 2500; // ARS 2,500 per extra guest
+      total += extraGuests * 1; // UYU 1 per extra guest
     }
 
     // Add selected addons

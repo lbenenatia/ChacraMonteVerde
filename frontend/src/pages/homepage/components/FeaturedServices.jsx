@@ -106,7 +106,7 @@ const FeaturedServices = () => {
         </div>
 
         <div className="text-center mt-12">
-          <Link to="/amenities-activities">
+          <Link to="/activities">
             <Button
               variant="default"
               size="lg"

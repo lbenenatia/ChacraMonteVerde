@@ -23,11 +23,12 @@ const Header = () => {
   }, [location]);
 
   const navigationItems = [
-    { path: '/homepage', label: 'Inicio', icon: 'Home' },
-    { path: '/event-gallery', label: 'Galería', icon: 'Image' },
-    { path: '/packages-pricing', label: 'Paquetes', icon: 'Package' },
-    { path: '/amenities-activities', label: 'Servicios', icon: 'Sparkles' },
-    { path: '/booking-consultation', label: 'Reservar', icon: 'Calendar', highlight: true }
+    { path: '/', label: 'Inicio', icon: 'Home' },
+    { path: '/gallery', label: 'Galería', icon: 'Image' },
+    { path: '/pricing', label: 'Paquetes', icon: 'Package' },
+    { path: '/activities', label: 'Servicios', icon: 'Sparkles' },
+    { path: '/booking', label: 'Reservar', icon: 'Calendar' },
+    { path: '/contact', label: 'Contáctanos', icon: 'Phone' },
   ];
 
   const isActivePath = (path) => location?.pathname === path;
@@ -40,7 +41,7 @@ const Header = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-20">
             <Link
-              to="/homepage"
+              to="/"
               className="flex items-center space-x-3 group"
             >
               <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center transition-organic group-hover:bg-primary/20">
@@ -80,9 +81,9 @@ const Header = () => {
             </nav>
 
             <div className="hidden lg:flex items-center space-x-4">
-              <Link to="/contact-location">
-                <Button variant="outline" iconName="Phone" iconPosition="left">
-                  Contáctanos
+              <Link to="/login">
+                <Button variant="outline" iconName="LogIn" iconPosition="left">
+                  Iniciar Sesión
                 </Button>
               </Link>
             </div>

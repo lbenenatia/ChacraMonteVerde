@@ -25,7 +25,7 @@ const ContactForm = () => {
     { value: 'corporate', label: 'Evento Corporativo' },
     { value: 'birthday', label: 'Cumpleaños' },
     { value: 'anniversary', label: 'Aniversario' },
-    { value: 'quinceañera', label: 'Quinceañera' },
+    { value: 'quinceañera', label: 'Quince' },
     { value: 'other', label: 'Otro' }
   ];
 
@@ -73,6 +73,8 @@ const ContactForm = () => {
 
     if (!formData?.phone?.trim()) {
       newErrors.phone = 'El teléfono es obligatorio';
+    } else if (!/^\+?\d{7,15}$/.test(formData?.phone)) {
+      newErrors.phone = 'Ingrese un número de teléfono válido';
     }
 
     if (!formData?.eventType) {
@@ -167,7 +169,7 @@ const ContactForm = () => {
             label="Teléfono"
             type="tel"
             name="phone"
-            placeholder="+54 11 1234-5678"
+            placeholder="09X XXX XXX"
             value={formData?.phone}
             onChange={handleChange}
             error={errors?.phone}

@@ -25,7 +25,7 @@ const CallToAction = () => {
     title: "Visítanos",
     description: "Programa una visita al lugar",
     action: "Contactar",
-    href: "/contact-location"
+    href: "/contact"
   }];
 
 
@@ -54,7 +54,7 @@ const CallToAction = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
-            <Link to="/booking-consultation">
+            <Link to="/booking">
               <Button
                 variant="default"
                 size="lg"
@@ -65,7 +65,7 @@ const CallToAction = () => {
                 Reservar Consulta
               </Button>
             </Link>
-            <Link to="/packages-pricing">
+            <Link to="/pricing">
               <Button
                 variant="outline"
                 size="lg"

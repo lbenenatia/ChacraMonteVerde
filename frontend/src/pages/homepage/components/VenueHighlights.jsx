@@ -140,7 +140,7 @@ const VenueHighlights = () => {
               Realiza un recorrido virtual por nuestro impresionante lugar y descubre por qué Monte Verde es el escenario perfecto para tu próxima celebración.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link to="/event-gallery">
+              <Link to="/gallery">
                 <Button
                   variant="default"
                   size="lg"
@@ -150,7 +150,7 @@ const VenueHighlights = () => {
                   Ver Galería de Eventos
                 </Button>
               </Link>
-              <Link to="/amenities-activities">
+              <Link to="/activities">
                 <Button
                   variant="outline"
                   size="lg"

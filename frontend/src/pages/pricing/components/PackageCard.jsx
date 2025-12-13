@@ -9,9 +9,9 @@ const PackageCard = ({
   selectedCurrency 
 }) => {
   const formatPrice = (price) => {
-    return new Intl.NumberFormat('es-AR', {
+    return new Intl.NumberFormat('es-UY', {
       style: 'currency',
-      currency: 'ARS',
+      currency: 'UYU',
       minimumFractionDigits: 2
     }).format(price);
   };

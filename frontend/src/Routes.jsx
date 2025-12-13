@@ -18,12 +18,11 @@ const Routes = () => {
       <RouterRoutes>
         {/* Define your route here */}
         <Route path="/" element={<Homepage />} />
-        <Route path="/booking-consultation" element={<BookingConsultation />} />
-        <Route path="/event-gallery" element={<EventGallery />} />
-        <Route path="/contact-location" element={<ContactLocation />} />
-        <Route path="/amenities-activities" element={<AmenitiesActivities />} />
-        <Route path="/packages-pricing" element={<PackagesPricing />} />
-        <Route path="/homepage" element={<Homepage />} />
+        <Route path="/booking" element={<BookingConsultation />} />
+        <Route path="/gallery" element={<EventGallery />} />
+        <Route path="/contact" element={<ContactLocation />} />
+        <Route path="/activities" element={<AmenitiesActivities />} />
+        <Route path="/pricing" element={<PackagesPricing />} />
         <Route path="*" element={<NotFound />} />
       </RouterRoutes>
       </ErrorBoundary>
