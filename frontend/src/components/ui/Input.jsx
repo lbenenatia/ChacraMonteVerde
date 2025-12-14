@@ -1,5 +1,6 @@
 import React from "react";
 import { cn } from "../../utils/cn";
+import Icon from "../AppIcon"; // Asegúrate de tener esta importación
 
 const Input = React.forwardRef(({
     className,
@@ -9,7 +10,8 @@ const Input = React.forwardRef(({
     error,
     required = false,
     id,
-    ...props
+    iconName, // ✅ Recibimos iconName aquí
+    ...props  // ✅ El resto de props va aquí
 }, ref) => {
     // Generate unique ID if not provided
     const inputId = id || `input-${Math.random()?.toString(36)?.substr(2, 9)}`;
@@ -28,7 +30,7 @@ const Input = React.forwardRef(({
                 )}
                 ref={ref}
                 id={inputId}
-                {...props}
+                {...props}  // ✅ Props normales (sin iconName)
             />
         );
     }
@@ -44,7 +46,7 @@ const Input = React.forwardRef(({
                 )}
                 ref={ref}
                 id={inputId}
-                {...props}
+                {...props}  // ✅ Props normales (sin iconName)
             />
         );
     }
@@ -65,17 +67,27 @@ const Input = React.forwardRef(({
                 </label>
             )}
 
-            <input
-                type={type}
-                className={cn(
-                    baseInputClasses,
-                    error && "border-destructive focus-visible:ring-destructive",
-                    className
+            <div className="relative">
+                {iconName && (
+                    <div className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground">
+                        <Icon name={iconName} size={18} />
+                    </div>
                 )}
-                ref={ref}
-                id={inputId}
-                {...props}
-            />
+                <input
+                    type={type}
+                    className={cn(
+                        baseInputClasses,
+                        iconName && "pl-10", // Agrega padding izquierdo para el icono
+                        error && "border-destructive focus-visible:ring-destructive",
+                        className
+                    )}
+                    ref={ref}
+                    id={inputId}
+                    // ✅ IMPORTANTE: {...props} NO incluye iconName
+                    // porque ya lo extrajimos arriba
+                    {...props}
+                />
+            </div>
 
             {description && !error && (
                 <p className="text-sm text-muted-foreground">

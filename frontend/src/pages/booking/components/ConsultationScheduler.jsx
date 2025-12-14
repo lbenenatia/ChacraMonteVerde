@@ -1,16 +1,22 @@
 import React, { useState } from 'react';
 import Icon from '../../../components/AppIcon';
 
-
 const ConsultationScheduler = ({ onSchedule, selectedDate, selectedTime }) => {
   const [currentMonth, setCurrentMonth] = useState(new Date());
 
-  const availableDates = [
-    { date: '2025-01-15', slots: ['10:00', '14:00', '16:00'] },
-    { date: '2025-01-16', slots: ['11:00', '15:00', '17:00'] },
-    { date: '2025-01-18', slots: ['10:00', '13:00', '16:00'] },
-    { date: '2025-01-20', slots: ['09:00', '14:00', '18:00'] },
-    { date: '2025-01-22', slots: ['10:00', '15:00', '17:00'] }
+  // Datos de ejemplo: días que ya tienen horarios ocupados
+  const bookedDates = [
+    { date: '2025-01-15', slots: ['10:00', '14:00'] }, // Solo quedan 16:00
+    { date: '2025-01-16', slots: ['11:00', '15:00', '17:00'] }, // No quedan horarios
+    { date: '2025-01-18', slots: ['10:00'] }, // Quedan 13:00, 16:00
+    { date: '2025-01-20', slots: ['09:00', '14:00', '18:00'] }, // No quedan horarios
+    { date: '2025-01-22', slots: [] } // Todos los horarios disponibles
+  ];
+
+  // Horarios base disponibles por día
+  const baseTimeSlots = [
+    '09:00', '10:00', '11:00', '12:00', 
+    '13:00', '14:00', '15:00', '16:00', '17:00', '18:00'
   ];
 
   const getDaysInMonth = (date) => {
@@ -26,19 +32,71 @@ const ConsultationScheduler = ({ onSchedule, selectedDate, selectedTime }) => {
 
   const { daysInMonth, startingDayOfWeek } = getDaysInMonth(currentMonth);
 
-  const isDateAvailable = (day) => {
+  // Verificar si una fecha es futura o hoy
+  const isFutureOrToday = (dateString) => {
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    
+    const inputDate = new Date(dateString);
+    inputDate.setHours(0, 0, 0, 0);
+    
+    return inputDate >= today;
+  };
+
+  // Verificar si un día tiene horarios disponibles
+  const hasAvailableSlots = (day) => {
     const dateStr = `${currentMonth?.getFullYear()}-${String(
       currentMonth?.getMonth() + 1
     )?.padStart(2, '0')}-${String(day)?.padStart(2, '0')}`;
-    return availableDates?.some((d) => d?.date === dateStr);
+    
+    // Verificar si es fecha futura
+    if (!isFutureOrToday(dateStr)) {
+      return false;
+    }
+    
+    // Buscar si hay reservas para esta fecha
+    const bookedDate = bookedDates.find(d => d.date === dateStr);
+    
+    if (!bookedDate) {
+      // No hay reservas, todos los horarios están disponibles
+      return true;
+    }
+    
+    // Si hay reservas, verificar si quedan horarios disponibles
+    const availableCount = baseTimeSlots.length - bookedDate.slots.length;
+    return availableCount > 0;
   };
 
+  // Obtener los horarios disponibles para un día específico
   const getAvailableSlots = (day) => {
     const dateStr = `${currentMonth?.getFullYear()}-${String(
       currentMonth?.getMonth() + 1
     )?.padStart(2, '0')}-${String(day)?.padStart(2, '0')}`;
-    const dateData = availableDates?.find((d) => d?.date === dateStr);
-    return dateData ? dateData?.slots : [];
+    
+    // Verificar si es fecha futura
+    if (!isFutureOrToday(dateStr)) {
+      return [];
+    }
+    
+    // Buscar reservas para esta fecha
+    const bookedDate = bookedDates.find(d => d.date === dateStr);
+    
+    if (!bookedDate) {
+      // No hay reservas, todos los horarios están disponibles
+      return baseTimeSlots;
+    }
+    
+    // Filtrar horarios que no están reservados
+    return baseTimeSlots.filter(slot => !bookedDate.slots.includes(slot));
+  };
+
+  // Verificar si un día es del pasado
+  const isPastDate = (day) => {
+    const dateStr = `${currentMonth?.getFullYear()}-${String(
+      currentMonth?.getMonth() + 1
+    )?.padStart(2, '0')}-${String(day)?.padStart(2, '0')}`;
+    
+    return !isFutureOrToday(dateStr);
   };
 
   const handlePrevMonth = () => {
@@ -114,26 +172,39 @@ const ConsultationScheduler = ({ onSchedule, selectedDate, selectedTime }) => {
 
           {Array.from({ length: daysInMonth })?.map((_, index) => {
             const day = index + 1;
-            const isAvailable = isDateAvailable(day);
             const dateStr = `${currentMonth?.getFullYear()}-${String(
               currentMonth?.getMonth() + 1
             )?.padStart(2, '0')}-${String(day)?.padStart(2, '0')}`;
+            
+            const isSelectable = hasAvailableSlots(day);
+            const isPast = isPastDate(day);
             const isSelected = selectedDate === dateStr;
+            const availableSlotsCount = getAvailableSlots(day).length;
 
             return (
               <button
                 key={day}
-                onClick={() => isAvailable && onSchedule(dateStr, null)}
-                disabled={!isAvailable}
-                className={`aspect-square rounded-lg text-sm font-medium transition-organic ${
+                onClick={() => isSelectable && onSchedule(dateStr, null)}
+                disabled={!isSelectable}
+                className={`aspect-square rounded-lg text-sm font-medium transition-organic relative ${
                   isSelected
                     ? 'bg-primary text-primary-foreground'
-                    : isAvailable
+                    : isSelectable
                     ? 'bg-muted hover:bg-primary/10 text-foreground'
                     : 'text-muted-foreground cursor-not-allowed opacity-40'
                 }`}
+                title={
+                  isPast 
+                    ? "Fecha pasada no disponible" 
+                    : !isSelectable 
+                    ? "No hay horarios disponibles" 
+                    : `${availableSlotsCount} horario(s) disponible(s)`
+                }
               >
                 {day}
+                {isSelectable && availableSlotsCount > 0 && (
+                  <span className="absolute -top-1 -right-1 w-2 h-2 bg-green-500 rounded-full"></span>
+                )}
               </button>
             );
           })}

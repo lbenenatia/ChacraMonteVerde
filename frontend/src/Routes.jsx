@@ -9,6 +9,11 @@ import ContactLocation from './pages/contact/ContactIndex.jsx';
 import AmenitiesActivities from './pages/activities/ActivitesIndex.jsx';
 import PackagesPricing from './pages/pricing/PricingIndex.jsx';
 import Homepage from './pages/homepage/HomepageIndex.jsx';
+import Login from './pages/login/LoginIndex.jsx';
+import Register from './pages/register/RegisterIndex.jsx';
+import ProtectedRoute from "ProtectedRoutes.jsx";
+import Account from "pages/account/AccountIndex.jsx";
+import Profile from "pages/profile/ProfileIndex.jsx";
 
 const Routes = () => {
   return (
@@ -16,7 +21,6 @@ const Routes = () => {
       <ErrorBoundary>
       <ScrollToTop />
       <RouterRoutes>
-        {/* Define your route here */}
         <Route path="/" element={<Homepage />} />
         <Route path="/booking" element={<BookingConsultation />} />
         <Route path="/gallery" element={<EventGallery />} />
@@ -24,6 +28,18 @@ const Routes = () => {
         <Route path="/activities" element={<AmenitiesActivities />} />
         <Route path="/pricing" element={<PackagesPricing />} />
         <Route path="*" element={<NotFound />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/account" element={
+          <ProtectedRoute>
+            <Account />
+          </ProtectedRoute>
+        } />
+        <Route path="/profile" element={
+          <ProtectedRoute>
+            <Profile />
+          </ProtectedRoute>
+        } />
       </RouterRoutes>
       </ErrorBoundary>
     </BrowserRouter>

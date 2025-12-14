@@ -180,41 +180,6 @@ const ContactLocation = () => {
             </div>
           </div>
         </section> */}
-
-        <section className="py-16 lg:py-24">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <div className="bg-gradient-to-br from-primary to-primary/80 rounded-2xl p-8 lg:p-12 shadow-organic-lg">
-              <Icon name="TreePine" size={48} color="white" className="mx-auto mb-6" />
-              <h2 className="font-serif text-3xl font-bold text-white mb-4">
-                ¿Listo para Comenzar tu Celebración?
-              </h2>
-              <p className="text-white/90 text-lg mb-8 max-w-2xl mx-auto">
-                Nuestro equipo está esperando para ayudarte a crear el evento de tus sueños en el entorno natural más hermoso de Maldonado.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button
-                  variant="secondary"
-                  size="lg"
-                  iconName="Calendar"
-                  iconPosition="left"
-                  onClick={() => document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' })}
-                >
-                  Solicitar Consulta
-                </Button>
-                <Button
-                  variant="outline"
-                  size="lg"
-                  iconName="Phone"
-                  iconPosition="left"
-                  onClick={() => window.location.href = 'tel:+59892824644'}
-                  className="bg-white/10 text-white border-white/30 hover:bg-white/20"
-                >
-                  Llamar Ahora
-                </Button>
-              </div>
-            </div>
-          </div>
-        </section>
       </main>
       <Footer />
     </div>

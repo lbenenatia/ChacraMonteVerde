@@ -139,7 +139,7 @@ const Booking = () => {
     if (validateStep(currentStep)) {
       setShowSuccessModal(true);
       setTimeout(() => {
-        navigate('/homepage');
+        navigate('/');
       }, 3000);
     }
   };
@@ -245,44 +245,6 @@ const Booking = () => {
                       Confirmar Reserva
                     </Button>
                   )}
-                </div>
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div className="bg-card rounded-xl shadow-organic-sm p-6 text-center">
-                  <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Icon name="Shield" size={24} color="var(--color-primary)" />
-                  </div>
-                  <h3 className="font-medium text-foreground mb-2">
-                    Pago Seguro
-                  </h3>
-                  <p className="text-sm text-muted-foreground">
-                    Transacciones protegidas con encriptación SSL
-                  </p>
-                </div>
-
-                <div className="bg-card rounded-xl shadow-organic-sm p-6 text-center">
-                  <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Icon name="Clock" size={24} color="var(--color-primary)" />
-                  </div>
-                  <h3 className="font-medium text-foreground mb-2">
-                    Respuesta Rápida
-                  </h3>
-                  <p className="text-sm text-muted-foreground">
-                    Confirmación inmediata por email y SMS
-                  </p>
-                </div>
-
-                <div className="bg-card rounded-xl shadow-organic-sm p-6 text-center">
-                  <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Icon name="HeadphonesIcon" size={24} color="var(--color-primary)" />
-                  </div>
-                  <h3 className="font-medium text-foreground mb-2">
-                    Soporte 24/7
-                  </h3>
-                  <p className="text-sm text-muted-foreground">
-                    Asistencia personalizada en todo momento
-                  </p>
                 </div>
               </div>
             </div>

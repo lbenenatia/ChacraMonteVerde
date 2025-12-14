@@ -7,10 +7,10 @@ const PaymentOptions = ({ formData, onChange, errors }) => {
   const [showCalculator, setShowCalculator] = useState(false);
 
   const packagePrices = {
-    basic: 250000,
-    standard: 450000,
-    premium: 750000,
-    luxury: 1200000
+    basic: 1,
+    standard: 2,
+    premium: 3,
+    luxury: 4
   };
 
   const installmentOptions = [
@@ -25,7 +25,7 @@ const PaymentOptions = ({ formData, onChange, errors }) => {
   ];
 
   const calculateInstallment = () => {
-    const price = packagePrices?.[formData?.selectedPackage] || 450000;
+    const price = packagePrices?.[formData?.selectedPackage] || 2;
     const installments = parseInt(formData?.installments) || 1;
     const interestRate = installments > 6 ? 0.15 : 0;
     const totalWithInterest = price * (1 + interestRate);
@@ -33,9 +33,9 @@ const PaymentOptions = ({ formData, onChange, errors }) => {
   };
 
   const formatCurrency = (amount) => {
-    return new Intl.NumberFormat('es-AR', {
+    return new Intl.NumberFormat('es-UY', {
       style: 'currency',
-      currency: 'ARS',
+      currency: 'UYU',
       minimumFractionDigits: 0
     })?.format(amount);
   };
@@ -60,10 +60,10 @@ const PaymentOptions = ({ formData, onChange, errors }) => {
         <Select
           label="Paquete Seleccionado"
           options={[
-            { value: 'basic', label: 'Básico - ARS 250.000' },
-            { value: 'standard', label: 'Estándar - ARS 450.000' },
-            { value: 'premium', label: 'Premium - ARS 750.000' },
-            { value: 'luxury', label: 'Lujo - ARS 1.200.000' }
+            { value: 'basic', label: 'Básico - UYU 1' },
+            { value: 'standard', label: 'Estándar - UYU 2' },
+            { value: 'premium', label: 'Premium - UYU 3' },
+            { value: 'luxury', label: 'Lujo - UYU 4' }
           ]}
           value={formData?.selectedPackage}
           onChange={(value) => onChange('selectedPackage', value)}

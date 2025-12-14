@@ -1,13 +1,17 @@
+// src/components/Header.jsx
 import React, { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import Icon from '../AppIcon';
 import Img from '../AppImage';
 import Button from './Button';
+import { useAuth } from '../../context/AuthContext';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
+  const { user, isAuthenticated, logout } = useAuth();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -32,6 +36,11 @@ const Header = () => {
   ];
 
   const isActivePath = (path) => location?.pathname === path;
+
+  const handleLogout = () => {
+    logout();
+    navigate('/');
+  };
 
   return (
     <>
@@ -81,11 +90,52 @@ const Header = () => {
             </nav>
 
             <div className="hidden lg:flex items-center space-x-4">
-              <Link to="/login">
-                <Button variant="outline" iconName="LogIn" iconPosition="left">
-                  Iniciar Sesión
-                </Button>
-              </Link>
+              {isAuthenticated ? (
+                <div className="flex items-center space-x-4">
+                  {/* Menú desplegable del usuario */}
+                  <div className="relative group">
+                    <Button variant="outlined" className="flex items-center space-x-2 px-3 py-2 rounded-lg text-sm font-medium text-foreground hover:bg-muted transition-organic">
+                      <div className="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center">
+                        <Icon name="User" size={16} />
+                      </div>
+                      <span>{user?.name || 'Usuario'}</span>
+                      <Icon name="ChevronDown" size={16} />
+                    </Button>
+                    
+                    {/* Dropdown menu */}
+                    <div className="absolute right-0 mt-2 w-48 bg-card border border-border rounded-lg shadow-organic-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                      <div className="p-2">
+                        <div className="px-3 py-2 border-b border-border">
+                          <p className="text-sm font-medium">{user?.name} {user?.surname}</p>
+                          <p className="text-xs text-muted-foreground truncate">{user?.email}</p>
+                        </div>
+                        <Link
+                          to="/profile"
+                          className="flex items-center space-x-2 px-3 py-2 rounded text-sm hover:bg-muted transition-organic w-full"
+                        >
+                          <Icon name="LayoutDashboard" size={16} />
+                          <span>Mi Perfil</span>
+                        </Link>
+                        <button
+                          onClick={handleLogout}
+                          className="flex items-center space-x-2 px-3 py-2 rounded text-sm hover:bg-destructive/10 hover:text-destructive transition-organic w-full text-left"
+                        >
+                          <Icon name="LogOut" size={16} />
+                          <span>Cerrar Sesión</span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ) : (
+                <>
+                  <Link to="/login">
+                    <Button variant="default" iconName="LogIn" iconPosition="left">
+                      Iniciar Sesión
+                    </Button>
+                  </Link>
+                </>
+              )}
             </div>
 
             <button
@@ -98,6 +148,8 @@ const Header = () => {
           </div>
         </div>
       </header>
+      
+      {/* Mobile Menu */}
       {isMobileMenuOpen && (
         <div
           className="fixed inset-0 z-40 bg-background/80 backdrop-blur-sm lg:hidden"
@@ -108,6 +160,38 @@ const Header = () => {
             onClick={(e) => e?.stopPropagation()}
           >
             <nav className="p-6 space-y-2">
+              {/* Información del usuario si está autenticado */}
+              {isAuthenticated && (
+                <div className="pb-4 border-b border-border">
+                  <div className="flex items-center space-x-3 mb-3">
+                    <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center">
+                      <Icon name="User" size={18} />
+                    </div>
+                    <div>
+                      <p className="font-medium">{user?.name} {user?.surname}</p>
+                      <p className="text-xs text-muted-foreground truncate">{user?.email}</p>
+                    </div>
+                  </div>
+                  <div className="grid grid-cols-2 gap-2">
+                    <Link
+                      to="/profile"
+                      className="px-3 py-2 text-sm bg-muted rounded-lg text-center"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      Mi Perfil
+                    </Link>
+                    <Link
+                      to="/profile"
+                      className="px-3 py-2 text-sm bg-primary text-primary-foreground rounded-lg text-center"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      Dashboard
+                    </Link>
+                  </div>
+                </div>
+              )}
+              
+              {/* Navegación */}
               {navigationItems?.map((item) => (
                 <Link
                   key={item?.path}
@@ -119,15 +203,59 @@ const Header = () => {
                       ? 'bg-cta text-cta-foreground'
                       : 'text-foreground hover:bg-muted'
                   }`}
+                  onClick={() => setIsMobileMenuOpen(false)}
                 >
                   <Icon name={item?.icon} size={20} />
                   <span>{item?.label}</span>
                 </Link>
               ))}
-              <div className="pt-4 border-t border-border">
-                <Link to="/contact-location" className="block">
+              
+              {/* Acciones de autenticación para móvil */}
+              <div className="pt-4 border-t border-border space-y-3">
+                {isAuthenticated ? (
+                  <>
+                    <Button
+                      variant="destructive"
+                      fullWidth
+                      iconName="LogOut"
+                      iconPosition="left"
+                      onClick={() => {
+                        handleLogout();
+                        setIsMobileMenuOpen(false);
+                      }}
+                    >
+                      Cerrar Sesión
+                    </Button>
+                  </>
+                ) : (
+                  <>
+                    <Link to="/login" className="block" onClick={() => setIsMobileMenuOpen(false)}>
+                      <Button
+                        variant="outline"
+                        fullWidth
+                        iconName="LogIn"
+                        iconPosition="left"
+                      >
+                        Iniciar Sesión
+                      </Button>
+                    </Link>
+                    <Link to="/register" className="block" onClick={() => setIsMobileMenuOpen(false)}>
+                      <Button
+                        variant="default"
+                        fullWidth
+                        iconName="UserPlus"
+                        iconPosition="left"
+                      >
+                        Registrarse
+                      </Button>
+                    </Link>
+                  </>
+                )}
+                
+                {/* Contacto siempre visible */}
+                <Link to="/contact" className="block" onClick={() => setIsMobileMenuOpen(false)}>
                   <Button
-                    variant="outline"
+                    variant="ghost"
                     fullWidth
                     iconName="Phone"
                     iconPosition="left"

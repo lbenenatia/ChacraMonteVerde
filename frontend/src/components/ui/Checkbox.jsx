@@ -13,6 +13,7 @@ const Checkbox = React.forwardRef(({
     description,
     error,
     size = "default",
+    onChange,
     ...props
 }, ref) => {
     // Generate unique ID if not provided
@@ -33,6 +34,7 @@ const Checkbox = React.forwardRef(({
                     ref={ref}
                     id={checkboxId}
                     checked={checked}
+                    onChange={onChange}
                     disabled={disabled}
                     required={required}
                     className="sr-only"
@@ -42,7 +44,7 @@ const Checkbox = React.forwardRef(({
                 <label
                     htmlFor={checkboxId}
                     className={cn(
-                        "peer shrink-0 rounded-sm border border-primary ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground cursor-pointer transition-colors",
+                        "peer shrink-0 rounded-sm border border-primary ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground cursor-pointer transition-colors flex items-center justify-center", // Agregado: flex items-center justify-center
                         sizeClasses?.[size],
                         checked && "bg-primary text-primary-foreground border-primary",
                         indeterminate && "bg-primary text-primary-foreground border-primary",
@@ -51,10 +53,10 @@ const Checkbox = React.forwardRef(({
                     )}
                 >
                     {checked && !indeterminate && (
-                        <Check className="h-3 w-3 text-current flex items-center justify-center" />
+                        <Check className="h-3 w-3 text-current" /> // Removido: flex items-center justify-center del icono
                     )}
                     {indeterminate && (
-                        <Minus className="h-3 w-3 text-current flex items-center justify-center" />
+                        <Minus className="h-3 w-3 text-current" /> // Removido: flex items-center justify-center del icono
                     )}
                 </label>
             </div>
