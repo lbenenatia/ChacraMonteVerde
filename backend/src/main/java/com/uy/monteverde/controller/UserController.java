@@ -34,7 +34,6 @@ public class UserController {
             userData.put("email", user.getEmail());
             userData.put("name", user.getName());
             userData.put("surname", user.getSurname());
-            userData.put("birthDate", user.getBirthDate().toString());
             userData.put("isActive", user.getIsActive());
             userData.put("role", user.getRole().name());
             userData.put("createdAt", user.getCreatedAt().toString());
